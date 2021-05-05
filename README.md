@@ -25,5 +25,4 @@ firectl --kernel=ubuntu-vmlinux --root-drive=ubuntu.ext4 --kernel-opts="init=/bi
 ```
 
 ## Contributions
-This project is actively looking for contributions/maintainers.
-I (bkleiner) have stopped using firecracker a while ago.
+You can find the original repo here https://github.com/bkleiner/ubuntu-firecracker
