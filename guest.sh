@@ -1,6 +1,6 @@
 #!/bin/bash
 #TAP_IP and FC_IP should be the same as those set in the kernel arguments 
-#This script should be added to the .bashrc file so it can run at startup
+#This script should be run on startup
 #Name server should be the name-server address of the host environment
 MASK_SHORT="/30"
 TAP_IP="169.254.0.22"

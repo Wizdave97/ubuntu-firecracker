@@ -1,15 +1,15 @@
 #!/bin/bash
 #TAP_DEV should be created dynamically in future it should be unique for each VM on a host machine
-TAP_DEV="tap0"
+TAP_DEV="tap$1"
 DEFAULT_DEVICE=`route | grep '^default' | grep -o '[^ ]*$'`
 
 MASK_LONG="255.255.255.252"
 MASK_SHORT="/30"
 # These IPs should be created dynamically also, should be unique for each VM on the entire server
-FC_IP="169.254.0.21"
-TAP_IP="169.254.0.22"
+FC_IP="169.254.0.2$1"
+TAP_IP="printf '169.254.0.2%s' $(($1 + 1))"
 
-
+# We'll ideally add the iptable rules for port forwarding here
 # set up a tap network interface for the Firecracker VM to user
 sudo ip link del "$TAP_DEV" 2> /dev/null || true
 sudo ip tuntap add $TAP_DEV mode tap
@@ -53,7 +53,7 @@ cat <<EOF > vmconfig.json
   ],
    "machine-config": {
     "vcpu_count": 4,
-    "mem_size_mib": 2048,
+    "mem_size_mib": 1024,
     "ht_enabled": false
   }
 }

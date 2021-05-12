@@ -1,7 +1,7 @@
 {
   "boot-source": {
     "kernel_image_path": "/home/david/Documents/ubuntu-firecracker/vmlinux.bin",
-    "boot_args": "init=/bin/systemd panic=1 pci=off reboot=k ipv6.disable=1 console=ttyS0 ip=169.254.0.21::169.254.0.22:255.255.255.252::eth0:off"
+    "boot_args": "init=/bin/systemd panic=1 pci=off reboot=k ipv6.disable=1 console=ttyS0 ip=169.254.0.22::printf '169.254.0.2%s' 3:255.255.255.252::eth0:off"
   },
   "drives": [
     {
@@ -14,13 +14,13 @@
   "network-interfaces": [
       {
           "iface_id": "eth0",
-          "guest_mac": "da:6e:c4:6e:dd:95",
-          "host_dev_name": "tap0"
+          "guest_mac": "02:f3:76:6b:01:f5",
+          "host_dev_name": "tap2"
       }
   ],
    "machine-config": {
     "vcpu_count": 4,
-    "mem_size_mib": 2048,
+    "mem_size_mib": 1024,
     "ht_enabled": false
   }
 }
