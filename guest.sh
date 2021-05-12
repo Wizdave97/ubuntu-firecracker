@@ -3,8 +3,6 @@
 #This script should be run on startup
 #Name server should be the name-server address of the host environment
 MASK_SHORT="/30"
-TAP_IP="169.254.0.22"
-FC_IP="169.254.0.21"
 NAME_SERVER="8.8.8.8"
 
 ip addr add dev eth0 $TAP_IP$MASK_SHORT

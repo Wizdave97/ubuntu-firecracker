@@ -1,4 +1,8 @@
 #!/bin/bash
+# To create the first VM run start.sh 1
+# To create another VM run start.sh 2 ..
+
+
 #TAP_DEV should be created dynamically in future it should be unique for each VM on a host machine
 TAP_DEV="tap$1"
 DEFAULT_DEVICE=`route | grep '^default' | grep -o '[^ ]*$'`
